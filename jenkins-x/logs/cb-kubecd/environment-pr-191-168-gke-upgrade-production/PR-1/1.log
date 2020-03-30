@@ -1,0 +1,46 @@
+
+Showing logs for build [32mcb-kubecd-environment-pr-191-16-2ngxf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-kpjm6[0m
+{"level":"warn","ts":1585573122.7275262,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585573122.7282145,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-pr-191-16-2ngxf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-xhfmn[0m
+{"level":"warn","ts":1585573124.0960338,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1585573124.097721,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-pr-191-16-2ngxf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-pr-191-16-2ngxf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-environment-pr-191-16-2ngxf-r9t5h[0m
+{"level":"warn","ts":1585573128.234919,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585573129.3332703,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-pr-191-168-gke-upgrade-production.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-pr-191-16-2ngxf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e7830ce50dffe042e9a02dcdcc4bea357e80adf2,1:adf04afb4b1d698b81e4850fb5bef568978c1be9
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow adf04afb4b1d698b81e4850fb5bef568978c1be9: e7830ce50dffe042e9a02dcdcc4bea357e80adf2:
+DEBUG: ran git fetch --unshallow origin adf04afb4b1d698b81e4850fb5bef568978c1be9: e7830ce50dffe042e9a02dcdcc4bea357e80adf2: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git reset --hard e7830ce50dffe042e9a02dcdcc4bea357e80adf2
+DEBUG: ran git reset --hard e7830ce50dffe042e9a02dcdcc4bea357e80adf2 in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge adf04afb4b1d698b81e4850fb5bef568978c1be9
+DEBUG: ran git merge adf04afb4b1d698b81e4850fb5bef568978c1be9 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e e7830ce50dffe042e9a02dcdcc4bea357e80adf2..HEAD
+Merged SHA adf04afb4b1d698b81e4850fb5bef568978c1be9 with commit message 'chore: Promote bdd-spring-1585571876 to version 0.0.1' into base branch master
+
+Showing logs for build [32mcb-kubecd-environment-pr-191-16-2ngxf-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-build[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
